@@ -1,0 +1,10 @@
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\bin\Debug\CryptoUtil.exe.config
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\bin\Debug\CryptoUtil.exe
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\bin\Debug\CryptoUtil.pdb
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.csprojResolveAssemblyReference.cache
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.Properties.Resources.resources
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.csproj.GenerateResource.cache
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.csproj.CoreCompileInputs.cache
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.exe
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.pdb
+C:\Users\kenmu\Projects\CryptoUtil\CryptoUtil\obj\Debug\CryptoUtil.CryptoUtil.resources
