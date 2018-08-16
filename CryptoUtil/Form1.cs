@@ -15,6 +15,7 @@ namespace CryptoUtil
         private static string publicKeyFile;
         private static string privateKeyFile;
         static string CONTAINER_NAME = "keyring";
+        static byte[] x;
         public CryptoUtil()
         {
             publicKeyFile = curr_dir + "/publickey.xml";
@@ -27,26 +28,28 @@ namespace CryptoUtil
         private void encryptButton_Click(object sender, EventArgs e)
         {
             byte[] e_message;
-            byte[] de_message = Encoding.Unicode.GetBytes(decryptedTextBox.Text);
+            byte[] de_message = Encoding.UTF8.GetBytes(decryptedTextBox.Text);
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
                 rsa.PersistKeyInCsp = false;
                 string publicKey = File.ReadAllText(publicKeyFile);
                 rsa.FromXmlString(publicKey);
                 e_message = rsa.Encrypt(de_message, true);
+                x = e_message;
             }
-            encryptedTextBox.Text = BitConverter.ToString(e_message);
+            encryptedTextBox.Text = Convert.ToBase64String(e_message);
         }
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
             byte[] de_message;
-            byte[] e_message = c(decryptedTextBox.Text);
+            byte[] e_message = Convert.FromBase64String(encryptedTextBox.Text);
             using (var rsa = new RSACryptoServiceProvider(2038))
             {
                 rsa.PersistKeyInCsp = false;
                 string privateKey = File.ReadAllText(privateKeyFile);
                 rsa.FromXmlString(privateKey);
+                e_message = x;
                 de_message = rsa.Decrypt(e_message, true);
             }
             decryptedTextBox.Text = Encoding.UTF8.GetString(de_message);

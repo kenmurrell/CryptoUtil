@@ -118,7 +118,7 @@
             // 
             // keyTextBox
             // 
-            this.keyTextBox.Location = new System.Drawing.Point(256, 243);
+            this.keyTextBox.Location = new System.Drawing.Point(260, 260);
             this.keyTextBox.Name = "keyTextBox";
             this.keyTextBox.Size = new System.Drawing.Size(195, 25);
             this.keyTextBox.TabIndex = 11;
@@ -127,11 +127,11 @@
             // keysLabel
             // 
             this.keysLabel.AutoSize = true;
-            this.keysLabel.Location = new System.Drawing.Point(195, 246);
+            this.keysLabel.Location = new System.Drawing.Point(207, 263);
             this.keysLabel.Name = "keysLabel";
-            this.keysLabel.Size = new System.Drawing.Size(24, 13);
+            this.keysLabel.Size = new System.Drawing.Size(48, 13);
             this.keysLabel.TabIndex = 13;
-            this.keysLabel.Text = "key";
+            this.keysLabel.Text = "key path";
             // 
             // messageLabel1
             // 
