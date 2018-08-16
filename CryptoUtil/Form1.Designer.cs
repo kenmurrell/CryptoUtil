@@ -36,15 +36,18 @@
             this.encryptedTextBox = new System.Windows.Forms.RichTextBox();
             this.genKeysButton = new System.Windows.Forms.Button();
             this.loadKeysButton = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.keyTextBox = new System.Windows.Forms.RichTextBox();
-            this.keysLabel = new System.Windows.Forms.Label();
+            this.publicKeyTextBox = new System.Windows.Forms.RichTextBox();
+            this.privateKeyLabel = new System.Windows.Forms.Label();
             this.messageLabel1 = new System.Windows.Forms.Label();
+            this.privateKeyTextBox = new System.Windows.Forms.RichTextBox();
+            this.publicKeyLabel = new System.Windows.Forms.Label();
+            this.messageLabel2 = new System.Windows.Forms.Label();
+            this.clearButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // encryptButton
             // 
-            this.encryptButton.Location = new System.Drawing.Point(219, 101);
+            this.encryptButton.Location = new System.Drawing.Point(219, 80);
             this.encryptButton.Name = "encryptButton";
             this.encryptButton.Size = new System.Drawing.Size(75, 23);
             this.encryptButton.TabIndex = 0;
@@ -54,7 +57,7 @@
             // 
             // decryptButton
             // 
-            this.decryptButton.Location = new System.Drawing.Point(219, 141);
+            this.decryptButton.Location = new System.Drawing.Point(219, 109);
             this.decryptButton.Name = "decryptButton";
             this.decryptButton.Size = new System.Drawing.Size(75, 23);
             this.decryptButton.TabIndex = 1;
@@ -116,22 +119,22 @@
             this.loadKeysButton.UseVisualStyleBackColor = true;
             this.loadKeysButton.Click += new System.EventHandler(this.loadKeysButton_Click);
             // 
-            // keyTextBox
+            // publicKeyTextBox
             // 
-            this.keyTextBox.Location = new System.Drawing.Point(260, 260);
-            this.keyTextBox.Name = "keyTextBox";
-            this.keyTextBox.Size = new System.Drawing.Size(195, 25);
-            this.keyTextBox.TabIndex = 11;
-            this.keyTextBox.Text = "";
+            this.publicKeyTextBox.Location = new System.Drawing.Point(266, 243);
+            this.publicKeyTextBox.Name = "publicKeyTextBox";
+            this.publicKeyTextBox.Size = new System.Drawing.Size(195, 25);
+            this.publicKeyTextBox.TabIndex = 11;
+            this.publicKeyTextBox.Text = "";
             // 
-            // keysLabel
+            // privateKeyLabel
             // 
-            this.keysLabel.AutoSize = true;
-            this.keysLabel.Location = new System.Drawing.Point(207, 263);
-            this.keysLabel.Name = "keysLabel";
-            this.keysLabel.Size = new System.Drawing.Size(48, 13);
-            this.keysLabel.TabIndex = 13;
-            this.keysLabel.Text = "key path";
+            this.privateKeyLabel.AutoSize = true;
+            this.privateKeyLabel.Location = new System.Drawing.Point(201, 277);
+            this.privateKeyLabel.Name = "privateKeyLabel";
+            this.privateKeyLabel.Size = new System.Drawing.Size(59, 13);
+            this.privateKeyLabel.TabIndex = 13;
+            this.privateKeyLabel.Text = "private key";
             // 
             // messageLabel1
             // 
@@ -141,14 +144,54 @@
             this.messageLabel1.Size = new System.Drawing.Size(0, 13);
             this.messageLabel1.TabIndex = 15;
             // 
+            // privateKeyTextBox
+            // 
+            this.privateKeyTextBox.Location = new System.Drawing.Point(266, 274);
+            this.privateKeyTextBox.Name = "privateKeyTextBox";
+            this.privateKeyTextBox.Size = new System.Drawing.Size(195, 25);
+            this.privateKeyTextBox.TabIndex = 16;
+            this.privateKeyTextBox.Text = "";
+            // 
+            // publicKeyLabel
+            // 
+            this.publicKeyLabel.AutoSize = true;
+            this.publicKeyLabel.Location = new System.Drawing.Point(201, 246);
+            this.publicKeyLabel.Name = "publicKeyLabel";
+            this.publicKeyLabel.Size = new System.Drawing.Size(55, 13);
+            this.publicKeyLabel.TabIndex = 17;
+            this.publicKeyLabel.Text = "public key";
+            // 
+            // messageLabel2
+            // 
+            this.messageLabel2.AutoSize = true;
+            this.messageLabel2.ForeColor = System.Drawing.Color.Red;
+            this.messageLabel2.Location = new System.Drawing.Point(216, 144);
+            this.messageLabel2.Name = "messageLabel2";
+            this.messageLabel2.Size = new System.Drawing.Size(0, 13);
+            this.messageLabel2.TabIndex = 18;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(219, 169);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 19;
+            this.clearButton.Text = "&CLEAR";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // CryptoUtil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 311);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.messageLabel2);
+            this.Controls.Add(this.publicKeyLabel);
+            this.Controls.Add(this.privateKeyTextBox);
             this.Controls.Add(this.messageLabel1);
-            this.Controls.Add(this.keysLabel);
-            this.Controls.Add(this.keyTextBox);
+            this.Controls.Add(this.privateKeyLabel);
+            this.Controls.Add(this.publicKeyTextBox);
             this.Controls.Add(this.loadKeysButton);
             this.Controls.Add(this.genKeysButton);
             this.Controls.Add(this.encryptedTextBox);
@@ -174,10 +217,13 @@
         private System.Windows.Forms.RichTextBox encryptedTextBox;
         private System.Windows.Forms.Button genKeysButton;
         private System.Windows.Forms.Button loadKeysButton;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.RichTextBox keyTextBox;
-        private System.Windows.Forms.Label keysLabel;
+        private System.Windows.Forms.RichTextBox publicKeyTextBox;
+        private System.Windows.Forms.Label privateKeyLabel;
         private System.Windows.Forms.Label messageLabel1;
+        private System.Windows.Forms.RichTextBox privateKeyTextBox;
+        private System.Windows.Forms.Label publicKeyLabel;
+        private System.Windows.Forms.Label messageLabel2;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 
